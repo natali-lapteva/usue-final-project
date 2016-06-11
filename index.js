@@ -21,7 +21,8 @@ var express = require('express'),
     MongoClient = require('mongodb').MongoClient,
     assert = require('assert'),
     ItemDAO = require('./items').ItemDAO,
-    CartDAO = require('./cart').CartDAO;
+    CartDAO = require('./cart').CartDAO,
+    Call = require('./call').Call;
     
 
 // Set up express
@@ -59,7 +60,8 @@ MongoClient.connect('mongodb://localhost:27017/mongomart', function(err, db) {
 
     var items = new ItemDAO(db);
     var cart = new CartDAO(db);
-    
+    var call = new Call(db);
+
     var router = express.Router();
 
     // Homepage
@@ -245,8 +247,7 @@ MongoClient.connect('mongodb://localhost:27017/mongomart', function(err, db) {
             }
         });
     });
-
-
+    
     router.post("/user/:userId/cart/items/:itemId/quantity", function(req, res) {
         "use strict";
         
@@ -265,7 +266,24 @@ MongoClient.connect('mongodb://localhost:27017/mongomart', function(err, db) {
                        });
         });
     });
-    
+
+    router.get('/contacts', function (req, res) {
+        res.render("contacts");
+    });
+
+    router.get('/requestCall', function (req, res) {
+        res.render("requestCall");
+    });
+
+    router.post('/requestCall', function (req, res) {
+        var body = req.body;
+        
+        call.createCall(body, function () {
+            res.render("requestCallResult");
+        })
+    });
+
+
 
     function cartTotal(userCart) {
         "use strict";

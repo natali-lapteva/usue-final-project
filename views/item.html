@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
   <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     
-    <title>{{item.title}} - MongoMart</title>
+    <title>{{item.title}} - Детские праздники</title>
     
     <!-- Bootstrap Core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
         <div class="row">
           <div class="col-md-12">
             <ol class="breadcrumb">
-              <li><a href="/">Home</a></li>
+              <li><a href="/">Главная</a></li>
               <li><a href="/?category={{item.category}}">{{item.category}}</a></li>
               <li class="active">{{item.title}}</li>
             </ol>
@@ -48,7 +48,7 @@
         <!-- Product Item Heading -->
         <div class="row">
           <div class="col-lg-12">
-            <h1 style="margin-top: 0px;" class="page-header">{{item.title}}
+            <h1 style="margin-top: 0;" class="page-header">{{item.title}}
               <small>{{item.slogan}}</small>
             </h1>
           </div>
@@ -63,13 +63,13 @@
           </div>
           
           <div class="col-md-4">
-            <h3>Product Description</h3>
+            <h3>Описание персонажа</h3>
             
             <div class="ratings" style="padding-left: 0px;">
               {% if reviews.length == 1 %}
-              <p class="pull-right">{{numReviews}} review</p>
+              <p class="pull-right">{{numReviews}} отзыв</p>
               {% else %}
-              <p class="pull-right">{{numReviews}} reviews</p>
+              <p class="pull-right">{{numReviews}} отзыв</p>
               {% endif %}
               <p>
                 {% for num in range(1,6) %}
@@ -83,12 +83,12 @@
               {{item.description}}
             </p>
             
-            <form action="/user/{{userId}}/cart/items/{{item._id}}" role="form" method="post">
+            <!--<form action="/user/{{userId}}/cart/items/{{item._id}}" role="form" method="post">
               <button class="btn btn-primary" type="submit">
-                Add to cart
+                Добавить в список желаний
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </button>
-            </form>
+            </form>-->
             
           </div>
           
@@ -99,7 +99,7 @@
         <div class="row">
           
           <div class="col-lg-12">
-            <h3 class="page-header">Latest Reviews</h3>
+            <h3 class="page-header">Последние отзывы</h3>
           </div>
           <div class="col-lg-12">
             
@@ -132,35 +132,35 @@
         
         <!-- Comments Form -->
         <div class="well">
-          <h4>Add a Review:</h4>
+          <h4>Оставить отзыв</h4>
           <form action="/item/{{item._id}}/reviews" role="form" method="post">
             <div class="form-group">
-              <label for="review">Review:</label>
+              <label for="review">Отзыв</label>
               <textarea name="review" class="form-control" rows="3"></textarea>
             </div>
             <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter display name">
+              <label for="name">Имя</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя">
             </div>
             <div class="form-group">
               
               <label class="radio-inline">
-                <input type="radio" name="stars" id="stars" value="1"> 1 star
+                <input type="radio" name="stars" id="stars" value="1"> 1 &#9733;
               </label>
               <label class="radio-inline">
-                <input type="radio" name="stars" id="stars" value="2"> 2 star
+                <input type="radio" name="stars" id="stars" value="2"> 2 &#9733;
               </label>
               <label class="radio-inline">
-                <input type="radio" name="stars" id="stars" value="3"> 3 star
+                <input type="radio" name="stars" id="stars" value="3"> 3 &#9733;
               </label>
               <label class="radio-inline">
-                <input type="radio" name="stars" id="stars" value="4"> 4 star
+                <input type="radio" name="stars" id="stars" value="4"> 4 &#9733;
               </label>
               <label class="radio-inline">
-                <input type="radio" name="stars" id="stars" value="5" checked> 5 star
+                <input type="radio" name="stars" id="stars" value="5" checked> 5 &#9733;
               </label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit Review</button>
+            <button type="submit" class="btn btn-primary">Отправить отзыв</button>
           </form>
         </div>
         
@@ -170,7 +170,7 @@
         <div class="row">
           
           <div class="col-lg-12">
-            <h3 class="page-header">Related Products</h3>
+            <h3 class="page-header">Другие персонажи</h3>
           </div>
           
           {% for relatedItem in relatedItems %}

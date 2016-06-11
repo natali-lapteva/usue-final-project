@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 
@@ -11,7 +11,7 @@
     <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
 
-    <title>MongoMart - Shop MongoDB Gear</title>
+    <title>Детские праздники</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col-md-12">
             <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Главная</a></li>
                 <li class="active">{{category_param}}</li>
             </ol>
         </div>
@@ -81,7 +81,7 @@
                         <h3><a href="/item/{{item._id}}">{{item.title}}</a></h3>
                         <h4>{{item.slogan}}</h4>
                         <p>{{item.description}}</p>
-                        <a class="btn btn-primary" href="/item/{{item._id}}">View Product <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <a class="btn btn-primary" href="/item/{{item._id}}">Подробнее<span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -111,15 +111,14 @@
 
                         {% endif %}
 
-                        <!-- TODO-lab3 Range based Pagination, modify the useRangeBasedPagination attribute in the controller  -->
 
                         {% if useRangeBasedPagination %}
 
                             <#if previousPageUrl??>
-                                <li><a href="${previousPageUrl}">Previous Page</a></li>
+                                <li><a href="${previousPageUrl}">Предыдущая страница</a></li>
                             </#if>
                             <#if nextPageUrl??>
-                                <li><a href="${nextPageUrl}">Next Page</a></li>
+                                <li><a href="${nextPageUrl}">Следующая страница</a></li>
                             </#if>
 
                         {% endif %}
@@ -131,7 +130,7 @@
             {% if useRangeBasedPagination == false %}
 
                 <div style="text-align:center;">
-                    <i>{{itemCount}} Products</i>
+                    <i>{{itemCount}} персонажа</i>
                 </div>
 
             {% endif %}
