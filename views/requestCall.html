@@ -36,8 +36,11 @@
 <div class="container">
 
     <form action="/requestCall" METHOD="post">
+        <legend>Ввод личных данных</legend>
+        <label>Оставьте, пожалуйста, свои контактные данные, и мы Вам перезвоним</label>
+        <br>
         <input type="text" name="name" id="name" placeholder="Имя">
-        <label for="name">Ваше имя</label>
+        <span class="help-block">Ваше имя</span>
         <br>
         <input type="text" name="phone" id="phone" placeholder="+7 (000) 000 00 00">
         <label for="phone">Номер телефона</label>
@@ -45,8 +48,8 @@
         <textarea name="comment" id="comment" placeholder="Оставте ваш комментарий здесь"></textarea>
         <label for="comment">Комментарий</label>
         <br>
-        <input type="submit" name="submit" value="Отправить">
-        <input type="reset" name="reset" value="Очистить">
+        <input type="submit" name="submit" value="Перезвоните мне" class="btn btn-success">
+        <input type="reset" name="reset" value="Очистить" class="btn btn-warning">
     </form>
 
 </div>

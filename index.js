@@ -283,7 +283,9 @@ MongoClient.connect('mongodb://localhost:27017/mongomart', function(err, db) {
         })
     });
 
-
+    router.get('/price', function (req, res) {
+        res.render("price");
+    });
 
     function cartTotal(userCart) {
         "use strict";
