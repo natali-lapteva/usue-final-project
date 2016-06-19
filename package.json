@@ -1,18 +1,31 @@
 {
-    "name": "mongomart",
-    "version": "0.1.0",
-    "description": "Ecommerce app Using the MongoDB driver and Express",
-    "main": "app.js",
-    "dependencies": {
-        "express": "~4.13.3",
-        "body-parser": "~1.15.0",
-        "mongodb": "~2.1.3",
-        "nunjucks": "~2.2.0",
-        "nunjucks-date": "~1.2.0"
-    },
-    "author": "Shannon Bradshaw",
-    "license": "0BSD",
-    "scripts": {
-        "start": "node ."
-    }
+  "name": "usue-final-project",
+  "version": "1.0.0",
+  "description": "Ecommerce app Using the MongoDB driver and Express",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.21",
+    "nunjucks": "^2.2.0",
+    "nunjucks-date": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natali-lapteva/usue-final-project.git"
+  },
+  "author": "Natali Lapteva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natali-lapteva/usue-final-project/issues"
+  },
+  "homepage": "https://github.com/natali-lapteva/usue-final-project#readme",
+  "engines": {
+    "node": "5.9.1"
+  }
 }
