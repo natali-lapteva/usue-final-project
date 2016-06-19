@@ -54,25 +54,6 @@ footer {
     margin: 50px 0;
 }
 
-.contacts, .requestCallResult {
-    margin-top: 40px;
-    font-size: 18px;
-    font-family: "Comic Sans MS", serif;
-}
-
-.contacts table {
-    border-collapse: collapse;
-}
-
 caption {
-    font-size: 20px;
-}
-
-th, td {
-    border-bottom: 1px solid #cecfd5;
-    padding: 10px 15px;
-}
-
-tr:last-child td {
-    border-bottom: 0;
+    font-size: large;
 }
