@@ -323,7 +323,7 @@ function ItemDAO(database) {
             slogan: "Made of 100% cotton",
             stars: 0,
             category: "Apparel",
-            img_url: "/img/products/hoodie.jpg",
+            img_url: "",
             price: 29.99,
             reviews: []
         };
