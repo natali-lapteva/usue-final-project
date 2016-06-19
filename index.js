@@ -12,6 +12,7 @@ var express = require('express'),
 app = express();
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
+app.set('port', (process.env.PORT || 3000));
 app.use('/static', express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -287,7 +288,7 @@ MongoClient.connect('mongodb://root:root@ds021462.mlab.com:21462/mongomart', fun
     app.use('/', router);
 
     // Start the server listening
-    var server = app.listen(3000, function() {
+    var server = app.listen(app.get('port'), function() {
         var port = server.address().port;
         console.log('Mongomart server listening on port %s.', port);
     });
