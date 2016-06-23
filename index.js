@@ -16,12 +16,6 @@ app.set('port', (process.env.PORT || 3000));
 app.use('/static', express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-/*
- Configure nunjucks to work with express
- Not using consolidate because I'm waiting on better support for template inheritance with
- nunjucks via consolidate. See: https://github.com/tj/consolidate.js/pull/224
-*/
 var env = nunjucks.configure('views', {
     autoescape: true,
     express: app
@@ -53,7 +47,7 @@ MongoClient.connect('mongodb://root:root@ds021462.mlab.com:21462/mongomart', fun
         "use strict";
         
         var page = req.query.page ? parseInt(req.query.page) : 0;
-        var category = req.query.category ? req.query.category : "All";
+        var category = req.query.category ? req.query.category : "Все";
 
         items.getCategories(function(categories) {
             
@@ -168,14 +162,6 @@ MongoClient.connect('mongodb://root:root@ds021462.mlab.com:21462/mongomart', fun
         });
     });
 
-
-    /*
-     *
-     * Since we are not maintaining user sessions in this application, any interactions with 
-     * the cart will be based on a single cart associated with the the USERID constant we have 
-     * defined above.
-     *
-     */
     router.get("/cart", function(req, res) {
         res.redirect("/user/" + USERID + "/cart");
     });
